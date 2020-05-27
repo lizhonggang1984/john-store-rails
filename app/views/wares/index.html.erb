@@ -1,0 +1,73 @@
+﻿<table width="100%" cellpadding="0" cellspacing="0" border="0"  bgcolor="#ECECEC"><tr><td align="right">
+<div class="box">
+   <div class="left_box">
+      <!-----------左边Flash广告-------------->
+       <div class="left_flash"><img src="/images/indexImage/g14.jpg" width="560" height="260" /></div>
+	   <!-----------右边Flash广告-------------->
+	   <div class="right_flash">
+	     <table width="350" height="260" border="0" cellpadding="0" cellspacing="0">
+           <tr>
+             <td height="145">
+			  <!-----------销售排行开始-------------->
+			 <img src="/images/indexImage/g06.jpg" width="350" height="145" />
+			 <!-----------销售排行结束-------------->
+			 </td>
+           </tr>
+           <tr>
+             <td height="115" valign="bottom"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+               <tr>
+                 <td width="10%" height="105" align="left"><p><img src="/images/indexImage/zngg.gif" width="30" height="105" /></p>
+                   </td>
+                 <td width="90%" align="left">
+                 
+                 <table width="100%" height="100" border="0" cellpadding="0" cellspacing="0">   
+                   <tr>
+                     <td>
+     
+			
+                     </td>
+                   </tr>
+                 </table>
+                 
+                 </td>
+               </tr>
+             </table></td>
+           </tr>
+         </table>
+	   </div>
+   </div>
+   <div class="right_box"></div>
+</div>
+</td></tr></table>
+
+<div class="box space_up">
+   <div class="left_box">
+      <div class="commend"><img src="/images/indexImage/g08.jpg" width="920" height="90" /></div>
+	   </div>
+   <div class="right_box"></div>
+</div>
+<% i=0 %>
+<table style="border:solid 0px #F60" width="650">
+<tr>
+<% @wares.each do |ware| %>
+<td>
+ <a href="">
+ <img src="/images/goodsImage/<%=ware.wimg %>.jpg" align="center" border="0" width="100px">
+ </a>
+ <br/>
+ 名称：<%=ware.wname%><br/>
+ 市场价格：<%=ware.wprice%><br/>
+<%= link_to '查看', ware %>
+<%#=link_to "下载图片", :action=>"downImg" , :filename=>"#{ware.wimg}" %>
+</td>
+<% i=i+1%>
+<%if i%5==0  then %>
+</tr>
+<% end %>
+<% end %>
+</tr>
+<tr><td></td><td></td></tr>
+</table>
+<br/>
+
+<%= link_to '添加商品', new_ware_path %>

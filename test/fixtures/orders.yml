@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  uname: MyString
+  uaddress: MyText
+  upost: MyString
+  uphone: MyString
+  uhomephone: MyString
+  price: 9.99
+
+two:
+  uname: MyString
+  uaddress: MyText
+  upost: MyString
+  uphone: MyString
+  uhomephone: MyString
+  price: 9.99

@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="/css/main.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+.user {
+	line-height:20px;
+	color:#F00;
+	text-align:right;
+}
+</style>
+</head>
+
+<body>
+<div class="box">
+  <div class="left_box" style="width:100%;">
+    <table width="100%" height="75" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="244" rowspan="2"><a href="index.jsp"><img src="/images/indexImage/logo.gif" border="0" width="244" height="36" /></a></td>
+        <td width="100" align="right"><div id="user" class="user">
+        
+        </div></td>
+        <td width="230" align="right" style="text-align:left;">您好，欢迎光临shopping网。<a href="safetyExit"><font color="#FF0000">安全退出</font></a></td>
+        <td width="335" align="right"> | 激活礼品卡 | <a href="memberInfoUpdate">我的帐户</a> | <a href="/cart/index"><img src="/images/indexImage/cart.gif" width="19" height="16" border="0" target="cart" /> <font color="#EF7201">购物车</font></a> | <a href="../page/help.jsp">帮助中心</a> | 购物演示 </td>
+      </tr>
+      <tr>
+        <td height="55" colspan="4" align="right"><table width="92%" border="0" align="right" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
+            <tr>
+              <td class="bg_navOne" height="30" align="center" bgcolor="#FFFFFF"><a href="index.jsp">首 页　 </a> | <a href="#"> 　音 乐　 </a> | <a href="#"> 　数 码　</a> | <a href="#"> 　百 货　</a><a href="#"></a>| <a href="#">　美 妆</a>　| <a href="#">　母婴儿童</a> 　|　 <a href="#"> 服饰鞋包　</a> | <a href="#"> 　家  居</a> 　|　<a href="#">　健康休闲</a></td>
+            </tr>
+          </table></td>
+      </tr>
+    </table>
+  </div>
+  
+  <!-----------------------------------------------导航栏------------------------------------------->
+  <table width="100%" height="40" cellpadding="0" cellspacing="0" border="0" bgcolor="#A9A09B">
+    <tr>
+      <td><div class="box bgColorOne" style="background:#4c2506;">
+          <div class="left_box"> 
+            
+            <!-- 查询商品开始 -->
+            <form action="QueryGoodsServlet" method="post" >
+              <table border="0" cellpadding="0" cellspacing="10" bgcolor="#4C2506">
+                <tr>
+                  <td width="80" align="right"><font color="#FFFFFF">商品搜索</font></td>
+                  <td width="140"><label>
+                      <select name="select">
+                        <option>----请输入查询商品名称----</option>
+                      </select>
+                    </label></td>
+                  <td width="300"><label>
+                      <input name="queryGoodsName" type="text" size="40" />
+                      <input type="submit" name="Submit" value="立刻搜索" />
+                    </label></td>
+                  <td>&nbsp;</td>
+                </tr>
+              </table>
+            </form>
+            <!-- 查询商品结束 --> 
+            
+          </div>
+          <div class="right_box"><img src="/images/indexImage/index_004.gif" width="405" height="42" /></div>
+        </div></td>
+    </tr>
+  </table>
+  <!--空格-->
+  <table width="100%">
+    <tr>
+      <td height="5"></td>
+    </tr>
+  </table>
+  <!------------------------------------------------头部结束---------------------------------------> 
+  
+  
+  
+       
+				
+<%=yield%>
+
+  <!------------------------------------------------尾部开始--------------------------------------->
+  <table>
+    <tr>
+      <td height="15"></td>
+    </tr>
+  </table>
+  <table width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
+    <tr>
+      <td height="30" align="center" bgcolor="#FFFFFF"><img src="/images/indexImage/footer_04.gif" width="562" height="20"></td>
+    </tr>
+    <tr>
+      <td height="50" align="center" bgcolor="#FFFFFF"><img src="/images/indexImage/footer_09.gif" width="343" height="36" alt="" /></td>
+    </tr>
+  </table>
+  <table width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
+    <tr>
+      <td height="40" align="center" bgcolor="#FFFFFF"><img src="/images/indexImage/footer_14.gif" width="786" height="17" alt="" /></td>
+    </tr>
+    <tr>
+      <td height="60" align="center" bgcolor="#FFFFFF"><table align="center"  border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="55" height="45" align="center"><img src="/images/indexImage/footer_20.gif" width="47" height="45" alt="" /></td>
+            <td width="645" align="center"><img src="/images/indexImage/footer_23.gif" width="638" height="36" alt="" /></td>
+          </tr>
+        </table></td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

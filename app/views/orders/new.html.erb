@@ -1,0 +1,98 @@
+﻿<h1>New order</h1>
+
+<%= render 'form' %>
+<%= form_for(@order) do |f| %>
+ <table align="center" width="950" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="63" height="61">&nbsp;</td>
+    <td width="124"><img src="/images/indexImage/buy_03.gif" width="124" height="61" alt="" /></td>
+    <td width="763">&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="92"><img src="/images/indexImage/buy_06.gif" width="63" height="92" alt="" /></td>
+    <td><img src="/images/indexImage/buy_07.gif" width="124" height="92" alt="" /></td>
+    <td><img src="/images/indexImage/buy_08.gif" alt="" width="763" height="92" border="0" usemap="#Map" /></td>
+  </tr>
+</table>
+
+<map name="Map" id="Map">
+<area shape="rect" coords="2,60,86,76" href="#" />
+</map>
+
+<!-- 拿到用户信息 -->
+    <table><tr><td height="20"></td></tr></table>
+       <table width="90%" bgColor="#DDDDDD" border="0" cellspacing="1" cellpadding="0">
+         <tr bgColor="#FFFFFF">
+            <td colspan="2" align="left" height="30">&nbsp;&nbsp;用 户： <%= f.text_field :uname %></td>
+         </tr>
+         <tr bgColor="#FFFFFF" heught="30">
+            <td width="100" height="30" align="left" bgcolor="#FFFFFF">&nbsp;&nbsp;移动电话：</td>
+            <td>&nbsp;&nbsp;<%= f.text_field :uphone %></td>
+         </tr>
+         <tr bgColor="#FFFFFF" heught="30">
+           <td height="30" align="left" bgcolor="#FFFFFF">&nbsp;&nbsp;固定电话：</td>
+           <td>&nbsp;
+             <%= f.text_field :uhomephone %></td>
+         </tr>
+         <tr bgColor="#FFFFFF" heught="30">
+           <td align="left" height="30">&nbsp;&nbsp;收货地址：</td>
+           <td>&nbsp;
+             <%= f.text_field :uaddress %></td>
+         </tr>
+         <tr bgColor="#FFFFFF" heught="30">
+            <td align="left" height="30">&nbsp;&nbsp;邮政编码：</td>
+            <td>&nbsp;&nbsp;<%= f.text_field :upost%></td>
+         </tr>
+       </table>
+       
+       <table><tr><td height="20"></td></tr></table>
+ 
+     <table width="90%" border="0" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
+       <tr heught="30">
+                  <td height="35" align="center" bgcolor="#FFF2F0">商品编号</td>
+                  <td align="center" bgcolor="#FFF2F0">商品名</td>
+                  <td align="center" bgcolor="#FFF2F0">单 价</td>
+                  <td align="center" bgcolor="#FFF2F0">数 量</td>
+                  <td align="center" bgcolor="#FFF2F0">价 格</td>
+       </tr>
+       <!-- 拿到购物车信息 -->
+       <%if @ware_shop!=nil then %>
+	         <% @ware_shop.each do |key,value|%>
+	            <tr height="30">
+                  <td height="25" align="center" bgcolor="#FFFFFF"><%=@allwares.find_by_wname(key).id%></td>
+                  <td align="center" bgcolor="#FFFFFF"><%=@allwares.find_by_wname(key).wname%></td>
+                  <td align="center" bgcolor="#FFFFFF"><%=@allwares.find_by_wname(key).wprice%></td>
+                  <td align="center" bgcolor="#FFFFFF"><%=value%></td>
+                  <td align="center" bgcolor="#FFFFFF"><%=@allwares.find_by_wname(key).wprice*value%></td>
+               </tr>
+               <% end %>
+               <% end %>
+	    
+       <tr>
+       <td height="30" align="center" bgcolor="#FFFFFF"></td>
+       <td align="center" bgcolor="#FFFFFF"></td>
+       <td align="center" bgcolor="#FFFFFF"></td>
+       <td align="center" bgcolor="#FFFFFF"></td>
+       <td align="center" bgcolor="#FFFFFF">总价：
+      <%= f.text_field :price, :size=>"5" , :value=>"#{@total}" %>
+       </td>
+       </tr>
+</table>
+       
+       <table width="90%" height="40" border="0" cellpadding="0" cellspacing="0">
+          <tr height="50">
+             <td valign="bottom" align="right"><a href="" class="f">
+                
+             </a></td>
+              <td width="50"></td>
+             <td valign="bottom" align="center">
+             
+               <%= f.submit %>
+             </td>
+          </tr>
+</table>
+
+    
+<% end %>
+
+<%= link_to 'Back', orders_path %>

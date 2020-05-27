@@ -1,0 +1,39 @@
+<h1>Listing orders</h1>
+
+<table>
+  <tr>
+<!--    <th>Id</th>-->
+    <th>Uname</th>
+    <th>Uaddress</th>
+    <th>Upost</th>
+    <th>Uphone</th>
+    <th>Uhomephone</th>
+    <th>Price</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @orders.each do |order| %>
+  <tr>
+<!--    <td><%#= order.id %></td>-->
+    <td><%= order.uname %></td>
+    <td><%= order.uaddress %></td>
+    <td><%= order.upost %></td>
+    <td><%= order.uphone %></td>
+    <td><%= order.uhomephone %></td>
+    <td><%= order.price %></td>
+    <td><%= link_to 'Show', order %></td>
+    <td><%= link_to 'Edit', edit_order_path(order) %></td>
+<!--    <td><%#= redirect_to "/orders/delete?id=#{order.id}"%>-->
+    <td><a href="/orders/emptyOrder?id=<%=order.id %>"> Cancel </a></td>
+
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<br>
+<%= link_to 'New Order', new_order_path %>
+<br>
+<%= link_to 'Continue Shopping', wares_path %>

@@ -1,0 +1,45 @@
+<%= form_for(@ware) do |f| %>
+  <% if @ware.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ware.errors.count, "error") %> prohibited this ware from being saved:</h2>
+
+      <ul>
+      <% @ware.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :id %><br />
+    <%= f.text_field :id %>
+  </div>
+  <div class="field">
+    <%= f.label :wname %><br />
+    <%= f.text_field :wname %>
+  </div>
+  <div class="field">
+    <%= f.label :wdesc %><br />
+    <%= f.text_area :wdesc %>
+  </div>
+  <div class="field">
+    <%= f.label :wtype %><br />
+    <%= f.text_field :wtype %>
+  </div>
+  <div class="field">
+    <%= f.label :wfactory %><br />
+    <%= f.text_field :wfactory %>
+  </div>
+  <div class="field">
+    <%= f.label :wprice %><br />
+    <%= f.text_field :wprice %>
+  </div>
+  <div class="field">
+    <%= f.label :wimg %><br />
+    <%= f.text_field :wimg %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
