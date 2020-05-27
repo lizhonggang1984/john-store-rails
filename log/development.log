@@ -13426,3 +13426,55 @@ Completed 200 OK in 142ms (Views: 83.4ms | ActiveRecord: 30.6ms | Allocations: 8
   [1m[35m (0.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('5939944341529942170')[0m
   [1m[35m (0.9ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
   [1m[35m (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for ::1 at 2020-05-28 05:55:09 +0800
+  [1m[35m (2.0ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 13.3ms | Allocations: 575)
+Completed 200 OK in 103ms (Views: 86.9ms | ActiveRecord: 0.0ms | Allocations: 3577)
+
+
+Started GET "/users" for ::1 at 2020-05-28 05:55:14 +0800
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.erb:19
+  Rendered users/index.html.erb within layouts/application (Duration: 43.5ms | Allocations: 8018)
+Completed 200 OK in 50ms (Views: 32.4ms | ActiveRecord: 15.4ms | Allocations: 9485)
+
+
+Started GET "/orders" for ::1 at 2020-05-28 05:55:20 +0800
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (1.8ms)[0m  [1m[34mSELECT `orders`.* FROM `orders`[0m
+  ↳ app/views/orders/index.html.erb:17
+  Rendered orders/index.html.erb within layouts/application (Duration: 46.9ms | Allocations: 7354)
+Completed 200 OK in 69ms (Views: 56.7ms | ActiveRecord: 5.6ms | Allocations: 8939)
+
+
+Started GET "/orders/emptyOrder?id=12" for ::1 at 2020-05-28 05:55:24 +0800
+Processing by OrdersController#emptyOrder as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mOrder Load (6.0ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` WHERE `orders`.`id` = 12 LIMIT 1[0m
+  ↳ app/controllers/orders_controller.rb:85:in `emptyOrder'
+  [1m[35m (3.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:86:in `emptyOrder'
+  [1m[36mOrder Destroy (94.8ms)[0m  [1m[31mDELETE FROM `orders` WHERE `orders`.`id` = 12[0m
+  ↳ app/controllers/orders_controller.rb:86:in `emptyOrder'
+  [1m[35m (23.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:86:in `emptyOrder'
+  Rendering orders/emptyOrder.html.erb within layouts/application
+  Rendered orders/emptyOrder.html.erb within layouts/application (Duration: 1.0ms | Allocations: 134)
+Completed 200 OK in 148ms (Views: 10.6ms | ActiveRecord: 127.8ms | Allocations: 3847)
+
+
+Started GET "/orders" for ::1 at 2020-05-28 05:55:26 +0800
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT `orders`.* FROM `orders`[0m
+  ↳ app/views/orders/index.html.erb:17
+  Rendered orders/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 817)
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.5ms | Allocations: 1315)
+
+
